@@ -5,13 +5,15 @@ import './index.css'
 // stateless functional component
 // always return JSX
 
+//VARS
+const author = "Amelia Hepworth";
+const img =
+  "https://images-na.ssl-images-amazon.com/images/I/517h-u1AQlL._SX482_BO1,204,203,200_.jpg";
+const title = "I Love You to the Moon and Back";
+
 function BookList() {
   return (
     <section className='booklist'>
-      <Book />
-      <Book />
-      <Book />
-      <Book />
       <Book />
       <Book />
       <Book />
@@ -22,20 +24,17 @@ function BookList() {
   );
 }
 
+// shift + option + A = comment out block of code
 
-// arrow function with implicit return
+// arrow function with explicit return
 const Book = () => {
-  return <article className='book'>
-    <Title />
-    <Image />
-    <Author />
-  </article>
+  return (
+    <article className="book">
+      <img src={img} alt="" />
+      <h2>{title}</h2>
+      <h4>{author}</h4>
+    </article>  
+  );
 }
-
-const Image = () => <img src="https://images-na.ssl-images-amazon.com/images/I/517h-u1AQlL._SX482_BO1,204,203,200_.jpg" alt="" />
-
-const Title = () => <h1>I Love You to the Moon and Back</h1>
-
-const Author = () => <h4 style={{color: '#617d98', fontSize: '0.75rem', marginTop: '0.5rem'}}>Amelia Hepworth</h4> 
 
 ReactDom.render(<BookList />, document.getElementById("root"));
