@@ -7,12 +7,23 @@ import ReactDom from "react-dom";
 function Greeting() {
   return (
     <div>
-      <h2>This is another component!</h2>
+      <Person /> 
+      <Message />
     </div>
   );
 }
 
-// 
+
+// implicit return
+const Person = () => <h2> this is a paragraph</h2>
+
+// explicit return 
+const Message = () => {
+  return (
+    <p>this is a message</p>
+  )
+}
+
 // const Greeting = () => {
 //   return React.createElement(
 //     "div",
