@@ -63,12 +63,12 @@ const Book = (props) => {
   return (
     <article
       className="book"
-      onMouseOver={() => {
+      onMouseOver={()=>{
         console.log(title);
       }}
     >
       <img src={img} alt="" />
-      {/* inline function */}m,  km, m,n    mn, 
+      {/* inline function */}
       <h2 onClick={() => console.log(title)}>{title}</h2>
       <h4>{author}</h4>
       {/* reference to function */}
