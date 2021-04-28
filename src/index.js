@@ -1,8 +1,24 @@
-import React from 'react';
-import ReactDom from 'react-dom';
+import React from "react";
+import ReactDom from "react-dom";
+
+// stateless functional component
+// always return JSX
 
 function Greeting() {
-  return <h4>This is alex and this is my first component</h4>;
+  return (
+    <div>
+      <h2>This is another component!</h2>
+    </div>
+  );
 }
 
-ReactDom.render(<Greeting />,document.getElementById('root'))
+// 
+// const Greeting = () => {
+//   return React.createElement(
+//     "div",
+//     {},
+//     React.createElement("h1", {}, "hello world!")
+//   );
+// };
+
+ReactDom.render(<Greeting />, document.getElementById("root"));
