@@ -2,11 +2,7 @@ import React from "react";
 import ReactDom from "react-dom";
 import './index.css'
 
-// stateless functional component
-// always return JSX
-
-// book as object
-
+// books as objects
 const firstBook = {
   img: 
     "https://images-na.ssl-images-amazon.com/images/I/517h-u1AQlL._SX482_BO1,204,203,200_.jpg",
@@ -22,7 +18,10 @@ const secondBook = {
   author: "Margaret Wise",
 };
 
+
+// stateless functional component
 function BookList() {
+  // always return JSX
   return (
     <section className="booklist">
       <Book
@@ -63,9 +62,9 @@ function BookList() {
 // const Book = ({ img, title, author, children }) {
 
 const Book = (props) => {
-
 // method 2 - as VAR
   const { img, title, author, children } = props;
+
   console.log(props)
   return (
     <article className="book">
