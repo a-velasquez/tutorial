@@ -5,25 +5,42 @@ import './index.css'
 // books as objects
 const books = [
   {
+    id: 1,
     img:
       "https://images-na.ssl-images-amazon.com/images/I/517h-u1AQlL._SX482_BO1,204,203,200_.jpg",
     title: "I Love You to the Moon and Back",
     author: "Amelia Hepworth",
   },
   {
-    img: 
-      "https://images-na.ssl-images-amazon.com/images/I/517h-u1AQlL._SX482_BO1,204,203,200_.jpg",
+    id: 2,
+    img:
+      "https://images-na.ssl-images-amazon.com/images/I/51Ix49rxgtL._SY414_BO1,204,203,200_.jpg",
     title: "I Love You to the Moon and Back",
-      author: 'Amelia Hepworth'
-  }
+    author: "Amelia Hepworth",
+  },
+  {
+    id: 3,
+    img: "https://m.media-amazon.com/images/I/41ThX3SfAiL.jpg",
+    title: "The Vanishing Half: A Novel",
+    author: "Brit Bennett",
+  },
 ];
+
+
+
 
 // stateless functional component
 function BookList() {
   // always return JSX
   return (
     <section className="booklist">
-      <Book
+      {books.map((book) => {
+        const { id, img, title, author } = book;
+        return (
+          <Book key={book.id} book={book}></Book>
+        );
+      })}
+      {/* <Book
         img={firstBook.img}
         title={firstBook.title}
         author={firstBook.author}
@@ -51,7 +68,7 @@ function BookList() {
           fugiat exercitation non ad amet. Labore exercitation tempor dolor
           nulla cillum minim cupidatat dolore qui commodo Lorem commodo.
         </p>
-      </Book>
+      </Book> */}
     </section>
   );
 }
@@ -62,7 +79,7 @@ function BookList() {
 
 const Book = (props) => {
 // method 2 - as VAR
-  const { img, title, author, children } = props;
+  const { img, title, author, children } = props.book;
 
   console.log(props)
   return (
