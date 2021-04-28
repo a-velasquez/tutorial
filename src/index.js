@@ -1,35 +1,41 @@
 import React from "react";
 import ReactDom from "react-dom";
+import './index.css'
 
 // stateless functional component
 // always return JSX
 
-function Greeting() {
+function BookList() {
   return (
-    <div>
-      <Person /> 
-      <Message />
-    </div>
+    <section className='booklist'>
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
   );
 }
 
 
-// implicit return
-const Person = () => <h2> this is a paragraph</h2>
-
-// explicit return 
-const Message = () => {
-  return (
-    <p>this is a message</p>
-  )
+// arrow function with implicit return
+const Book = () => {
+  return <article className='book'>
+    <Title />
+    <Image />
+    <Author />
+  </article>
 }
 
-// const Greeting = () => {
-//   return React.createElement(
-//     "div",
-//     {},
-//     React.createElement("h1", {}, "hello world!")
-//   );
-// };
+const Image = () => <img src="https://images-na.ssl-images-amazon.com/images/I/517h-u1AQlL._SX482_BO1,204,203,200_.jpg" alt="" />
 
-ReactDom.render(<Greeting />, document.getElementById("root"));
+const Title = () => <h1>I Love You to the Moon and Back</h1>
+
+const Author = () => <h4>Amelia Hepworth</h4> 
+
+ReactDom.render(<BookList />, document.getElementById("root"));
