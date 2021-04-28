@@ -3,21 +3,20 @@ import ReactDom from "react-dom";
 import './index.css'
 
 // books as objects
-const firstBook = {
-  img: 
-    "https://images-na.ssl-images-amazon.com/images/I/517h-u1AQlL._SX482_BO1,204,203,200_.jpg",
-  title: "I Love You to the Moon and Back",
-    author: 'Amelia Hepworth'
-}
-
-
-const secondBook = {
-  img:
-    "https://images-na.ssl-images-amazon.com/images/I/51Ix49rxgtL._SY414_BO1,204,203,200_.jpg",
-  title: "Goodnight Moon",
-  author: "Margaret Wise",
-};
-
+const books = [
+  {
+    img:
+      "https://images-na.ssl-images-amazon.com/images/I/517h-u1AQlL._SX482_BO1,204,203,200_.jpg",
+    title: "I Love You to the Moon and Back",
+    author: "Amelia Hepworth",
+  },
+  {
+    img: 
+      "https://images-na.ssl-images-amazon.com/images/I/517h-u1AQlL._SX482_BO1,204,203,200_.jpg",
+    title: "I Love You to the Moon and Back",
+      author: 'Amelia Hepworth'
+  }
+];
 
 // stateless functional component
 function BookList() {
