@@ -44,27 +44,41 @@ function BookList() {
 // const Book = ({ img, title, author, children }) {
 
 const Book = (props) => {
-// atribute, eventHandler
-// onClick, onMouseOver
-  
-// method 2 - as VAR
+  // atribute, eventHandler
+  // onClick, onMouseOver
+
+  // method 2 - as VAR
   const { img, title, author } = props;
 
-  const clickHandler = () => {
-    alert('Hello World')
-  }
+  const clickHandler = (e) => {
+    console.log(e.target);
+    alert("Hello World");
+  };
 
-  console.log(props)
+  const complexExample = (author) => {
+    console.log(author);
+  };
+
+  console.log(props);
   return (
-    <article className="book">
+    <article
+      className="book"
+      onMouseOver={() => {
+        console.log(title);
+      }}
+    >
       <img src={img} alt="" />
-      {/* inline function */}
+      {/* inline function */}m,  km, m,n    mn, 
       <h2 onClick={() => console.log(title)}>{title}</h2>
       <h4>{author}</h4>
       {/* reference to function */}
       <button onClick={clickHandler}>Reference Example</button>
-    </article>  
+      {/* when passing args must invoke function as arrow function */}
+      <button onClick={() => complexExample(author)}>
+        More Complex Example
+      </button>
+    </article>
   );
-}
+};
 
 ReactDom.render(<BookList />, document.getElementById("root"));
